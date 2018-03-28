@@ -30,6 +30,6 @@ public class GameController : MonoBehaviour {
         //}
         usedWorkerCount = brainRegion.GetComponent<WorkerContainer>().getWorkerCount();
         Debug.Log("setting text...");
-        workerDisplay.GetComponent<Text>().text = string.Format(workerCountDisplayString, usedWorkerCount, maxWorker);
+        workerDisplay.GetComponent<Text>().text = string.Format(workerCountDisplayString, maxWorker - usedWorkerCount, maxWorker);
 	}
 }
