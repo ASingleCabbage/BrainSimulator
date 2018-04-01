@@ -7,6 +7,7 @@ public class WorkerContainer : MonoBehaviour {
     public GameObject worker;
     public float workerMargin;
     public int maxRow;
+    public int maxWorkerCount;
 
     private List<GameObject> workersList;
 
@@ -17,12 +18,16 @@ public class WorkerContainer : MonoBehaviour {
 	void Start () {
         //might have to delete this manually to prevent leaks?
         workersList = new List<GameObject>();
-
-        addButton.onClick.AddListener(() => addWorker());
-        remButton.onClick.AddListener(() => removeWorker());
     }
 
-    void addWorker() {
+
+    /*
+     * Add and remove worker functions return true if operation successful, else false
+     * */
+    public bool AddWorker() {
+        if (workersList.Count >= maxWorkerCount) {
+            return false;
+        }
         RectTransform rt = gameObject.GetComponent<RectTransform>();
 
         //getting local x and y position for worker based on the specified params
@@ -35,16 +40,18 @@ public class WorkerContainer : MonoBehaviour {
         workerObject.transform.localPosition = workerLocalPos;
         
         workersList.Add(workerObject);
+        return true;
     }
 
-    void removeWorker() {
+    public bool RemoveWorker() {
         int lastIndex = workersList.Count - 1;
         if (lastIndex < 0) {
-            return;
+            return false;
         }
 
         Destroy(workersList[lastIndex]);
         workersList.RemoveAt(lastIndex);
+        return true;
     }
 
     public int getWorkerCount() {

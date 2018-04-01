@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 114175450585609134}
   m_Layer: 5
   m_Name: BrainRegion
-  m_TagString: Untagged
+  m_TagString: brainRegion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,6 +198,7 @@ MonoBehaviour:
   worker: {fileID: 1072766955621508, guid: 69992576644c7794e951318fefdc1710, type: 2}
   workerMargin: 25
   maxRow: 2
+  maxWorkerCount: 6
   addButton: {fileID: 114112447401729868}
   remButton: {fileID: 114869085562300058}
 --- !u!114 &114226267676374592
