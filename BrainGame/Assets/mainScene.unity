@@ -193,7 +193,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1243490011}
   m_HandleRect: {fileID: 1243490010}
   m_Direction: 2
-  m_Value: 1
+  m_Value: 0
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -414,9 +414,10 @@ GameObject:
   m_Component:
   - component: {fileID: 449665612}
   - component: {fileID: 449665611}
+  - component: {fileID: 449665613}
   m_Layer: 0
   m_Name: GameController
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -450,6 +451,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &449665613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449665610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 060a13f296474f24a941f81d93f24fc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scrollViewContent: {fileID: 1492525408}
+  item: {fileID: 1624420198140336, guid: 9a1d0c658891cc149a4814b7d2aa3ed9, type: 2}
 --- !u!224 &485877303 stripped
 RectTransform:
   m_PrefabParentObject: {fileID: 224441221062880190, guid: b1ba99124b26e9843b0d6c453171f447,
@@ -551,6 +565,10 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1112527115432844, guid: b1ba99124b26e9843b0d6c453171f447, type: 2}
+      propertyPath: m_Name
+      value: FrontalLobe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1ba99124b26e9843b0d6c453171f447, type: 2}
@@ -654,7 +672,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1112527115432844, guid: b1ba99124b26e9843b0d6c453171f447, type: 2}
       propertyPath: m_Name
-      value: BrainRegion (2)
+      value: BrainStem
       objectReference: {fileID: 0}
     - target: {fileID: 114643117761532288, guid: b1ba99124b26e9843b0d6c453171f447,
         type: 2}
@@ -763,7 +781,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1112527115432844, guid: b1ba99124b26e9843b0d6c453171f447, type: 2}
       propertyPath: m_Name
-      value: BrainRegion (4)
+      value: TemporalLobe
       objectReference: {fileID: 0}
     - target: {fileID: 114643117761532288, guid: b1ba99124b26e9843b0d6c453171f447,
         type: 2}
@@ -816,8 +834,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 134.725, y: 35.85}
-  m_SizeDelta: {x: 269.45, y: 71.7}
+  m_AnchoredPosition: {x: 136.19, y: 35.85}
+  m_SizeDelta: {x: 272.38, y: 71.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &805268082
 MonoBehaviour:
@@ -951,7 +969,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1112527115432844, guid: b1ba99124b26e9843b0d6c453171f447, type: 2}
       propertyPath: m_Name
-      value: BrainRegion (1)
+      value: MotorCortex
       objectReference: {fileID: 0}
     - target: {fileID: 114643117761532288, guid: b1ba99124b26e9843b0d6c453171f447,
         type: 2}
@@ -1060,7 +1078,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1112527115432844, guid: b1ba99124b26e9843b0d6c453171f447, type: 2}
       propertyPath: m_Name
-      value: BrainRegion (3)
+      value: ParietalLobe
       objectReference: {fileID: 0}
     - target: {fileID: 114643117761532288, guid: b1ba99124b26e9843b0d6c453171f447,
         type: 2}
@@ -1105,8 +1123,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 134.7, y: 226}
-  m_SizeDelta: {x: 269.4, y: 308.6}
+  m_AnchoredPosition: {x: 136.18756, y: 226}
+  m_SizeDelta: {x: 272.38, y: 308.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &999749684
 MonoBehaviour:
@@ -1154,17 +1172,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Content: {fileID: 1492525409}
   m_Horizontal: 0
-  m_Vertical: 0
+  m_Vertical: 1
   m_MovementType: 1
   m_Elasticity: 0.1
   m_Inertia: 1
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 1
+  m_ScrollSensitivity: 20
   m_Viewport: {fileID: 1676012618}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 210663021}
   m_HorizontalScrollbarVisibility: 2
-  m_VerticalScrollbarVisibility: 2
+  m_VerticalScrollbarVisibility: 0
   m_HorizontalScrollbarSpacing: -3
   m_VerticalScrollbarSpacing: -3
   m_OnValueChanged:
@@ -1511,6 +1529,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 1492525409}
+  - component: {fileID: 1492525411}
+  - component: {fileID: 1492525410}
   m_Layer: 5
   m_Name: Content
   m_TagString: Untagged
@@ -1533,9 +1553,44 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -11, y: -0.000030517578}
-  m_SizeDelta: {x: 0, y: 300}
+  m_AnchoredPosition: {x: -11, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
+--- !u!114 &1492525410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1492525408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1297475563, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 1
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 0
+  m_ChildControlHeight: 0
+--- !u!114 &1492525411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1492525408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &1676012617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1569,9 +1624,9 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: -17, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1676012619
 MonoBehaviour:
@@ -1592,7 +1647,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1858,7 +1913,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1112527115432844, guid: b1ba99124b26e9843b0d6c453171f447, type: 2}
       propertyPath: m_Name
-      value: BrainRegion (5)
+      value: OccipitalLobe
       objectReference: {fileID: 0}
     - target: {fileID: 114643117761532288, guid: b1ba99124b26e9843b0d6c453171f447,
         type: 2}

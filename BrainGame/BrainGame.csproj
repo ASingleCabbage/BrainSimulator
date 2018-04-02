@@ -283,9 +283,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\GameController.cs" />
+    <Compile Include="Assets\InventoryItem.cs" />
+    <Compile Include="Assets\ScrollViewManager.cs" />
     <Compile Include="Assets\SimpleDragAndDrop\Scripts\DragAndDropCell.cs" />
     <Compile Include="Assets\SimpleDragAndDrop\Scripts\DragAndDropItem.cs" />
     <Compile Include="Assets\SimpleDragAndDrop\Scripts\DummyControlUnit.cs" />
+    <Compile Include="Assets\Worker.cs" />
     <Compile Include="Assets\WorkerContainer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
