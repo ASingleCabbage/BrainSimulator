@@ -10,16 +10,32 @@ public class WorkerContainer : MonoBehaviour {
     public int maxWorkerCount;
 
     private List<GameObject> workersList;
+    private string[] messages;
+    private GameObject infoPanel;
+
 
     public Button addButton;
     public Button remButton;
-
-	// Use this for initialization
+    
 	void Start () {
-        //might have to delete this manually to prevent leaks?
         workersList = new List<GameObject>();
     }
 
+    public void SetMessages(string[] messages, GameObject infoPanel) {
+        this.messages = messages;
+        this.infoPanel = infoPanel;
+    }
+
+    //Default message is set here
+    private void PrintMessage() {
+        if (workersList.Count < messages.Length) {
+            string message = messages[workersList.Count];
+            if (message.Equals("")) {
+                message = "[NO EFFECT]";
+            }
+            infoPanel.GetComponent<InfoPanel>().displayText(message);
+        }
+    }
 
     /*
      * Add and remove worker functions return true if operation successful, else false
@@ -40,6 +56,7 @@ public class WorkerContainer : MonoBehaviour {
         workerObject.transform.localPosition = workerLocalPos;
         
         workersList.Add(workerObject);
+        PrintMessage();
         return true;
     }
 
@@ -51,6 +68,7 @@ public class WorkerContainer : MonoBehaviour {
 
         Destroy(workersList[lastIndex]);
         workersList.RemoveAt(lastIndex);
+        PrintMessage();
         return true;
     }
 
