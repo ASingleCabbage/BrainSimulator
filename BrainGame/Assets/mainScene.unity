@@ -843,6 +843,26 @@ Prefab:
       propertyPath: m_Name
       value: FrontalLobe
       objectReference: {fileID: 0}
+    - target: {fileID: 114815320033584570, guid: b1ba99124b26e9843b0d6c453171f447,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114815320033584570, guid: b1ba99124b26e9843b0d6c453171f447,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114815320033584570, guid: b1ba99124b26e9843b0d6c453171f447,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114815320033584570, guid: b1ba99124b26e9843b0d6c453171f447,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1ba99124b26e9843b0d6c453171f447, type: 2}
   m_IsPrefabParent: 0
@@ -951,6 +971,11 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: Brain Stem
+      objectReference: {fileID: 0}
+    - target: {fileID: 114815320033584570, guid: b1ba99124b26e9843b0d6c453171f447,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1ba99124b26e9843b0d6c453171f447, type: 2}
@@ -1155,6 +1180,11 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: Temporal Lobe
+      objectReference: {fileID: 0}
+    - target: {fileID: 114815320033584570, guid: b1ba99124b26e9843b0d6c453171f447,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1ba99124b26e9843b0d6c453171f447, type: 2}
@@ -1446,6 +1476,11 @@ Prefab:
       propertyPath: m_Text
       value: Motor Cortex
       objectReference: {fileID: 0}
+    - target: {fileID: 114815320033584570, guid: b1ba99124b26e9843b0d6c453171f447,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1ba99124b26e9843b0d6c453171f447, type: 2}
   m_IsPrefabParent: 0
@@ -1554,6 +1589,11 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: Parietal Lobe
+      objectReference: {fileID: 0}
+    - target: {fileID: 114815320033584570, guid: b1ba99124b26e9843b0d6c453171f447,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1ba99124b26e9843b0d6c453171f447, type: 2}
@@ -1991,7 +2031,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e764ada1ab0308942987c4f60ffde9b2, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 06fe01e5a6ad3a3469d236be519c578c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2680,6 +2720,11 @@ Prefab:
         type: 2}
       propertyPath: m_Text
       value: Occipital Lobe
+      objectReference: {fileID: 0}
+    - target: {fileID: 114815320033584570, guid: b1ba99124b26e9843b0d6c453171f447,
+        type: 2}
+      propertyPath: m_Color.a
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b1ba99124b26e9843b0d6c453171f447, type: 2}
