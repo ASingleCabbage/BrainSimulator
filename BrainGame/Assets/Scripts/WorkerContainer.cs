@@ -1,17 +1,26 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class WorkerContainer : MonoBehaviour {
     public GameObject worker;
+    public GameObject infoPanel;
     public float workerMargin;
     public int maxRow;
-    public int maxWorkerCount;
+    public int maxWorkerCount = 6;
+
+    public string defaultMessage = "[No Effect]";
+
+    [SerializeField]
+    public string[] infoTexts;
+    [SerializeField]
+    public UnityEvent[] clickFunctionCalls;
 
     private List<GameObject> workersList;
     private string[] messages;
-    private GameObject infoPanel;
 
 
     public Button addButton;
@@ -19,22 +28,29 @@ public class WorkerContainer : MonoBehaviour {
     
 	void Start () {
         workersList = new List<GameObject>();
-    }
 
-    public void SetMessages(string[] messages, GameObject infoPanel) {
-        this.messages = messages;
-        this.infoPanel = infoPanel;
+        //Print out the initial messages and functions
+        PrintMessage();
+        TriggerWorkerCountFunction(0);
     }
-
-    //Default message is set here
+    
     private void PrintMessage() {
-        if (workersList.Count < messages.Length) {
-            string message = messages[workersList.Count];
+        string message;
+        if (workersList.Count < infoTexts.Length) {
+            message = infoTexts[workersList.Count];
             if (message.Equals("")) {
-                message = "[NO EFFECT]";
+                message = defaultMessage;
             }
-            infoPanel.GetComponent<InfoPanel>().displayText(message);
+        } else {
+            message = defaultMessage;    
         }
+        infoPanel.GetComponent<InfoPanel>().displayText(message);
+    }
+
+    private void TriggerWorkerCountFunction(int workerCount) {
+        if (clickFunctionCalls.Length > workerCount) {
+            clickFunctionCalls[workerCount].Invoke();
+        } 
     }
 
     /*
@@ -56,6 +72,7 @@ public class WorkerContainer : MonoBehaviour {
         workerObject.transform.localPosition = workerLocalPos;
         
         workersList.Add(workerObject);
+        TriggerWorkerCountFunction(workersList.Count);
         PrintMessage();
         return true;
     }
@@ -68,11 +85,12 @@ public class WorkerContainer : MonoBehaviour {
 
         Destroy(workersList[lastIndex]);
         workersList.RemoveAt(lastIndex);
+        TriggerWorkerCountFunction(workersList.Count);
         PrintMessage();
         return true;
     }
 
-    public int getWorkerCount() {
+    public int GetWorkerCount() {
         return workersList.Count;
     }
 }   

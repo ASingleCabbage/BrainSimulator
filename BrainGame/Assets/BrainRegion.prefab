@@ -196,9 +196,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   worker: {fileID: 1072766955621508, guid: 69992576644c7794e951318fefdc1710, type: 2}
+  infoPanel: {fileID: 0}
   workerMargin: 25
   maxRow: 2
   maxWorkerCount: 6
+  defaultMessage: '[No Effect]'
+  infoTexts: []
+  clickFunctionCalls: []
   addButton: {fileID: 114112447401729868}
   remButton: {fileID: 114869085562300058}
 --- !u!114 &114226267676374592
@@ -293,7 +297,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Frontal Lobe
+  m_Text: Parietal Lobe
 --- !u!114 &114755389845089388
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -484,9 +488,9 @@ RectTransform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 292, y: 239}
+  m_AnchorMin: {x: 0.46500003, y: 0.77900004}
+  m_AnchorMax: {x: 0.46500003, y: 0.77900004}
+  m_AnchoredPosition: {x: 6, y: 1}
   m_SizeDelta: {x: 191.72998, y: 71}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224690928223813174
