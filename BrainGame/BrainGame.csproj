@@ -292,6 +292,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\CameraEffectsController.cs" />
     <Compile Include="Assets\Scripts\FadeInEnable.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\InfoPanel.cs" />
