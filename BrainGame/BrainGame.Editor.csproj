@@ -286,87 +286,81 @@
       <Project>{A00F354A-6719-3A1C-894B-4EC9F11653D7}</Project>
       <Name>BrainGame</Name>
     </ProjectReference>
+    <ProjectReference Include="com.unity.postprocessing.Editor.csproj">
+      <Project>{8C3967EF-EA5C-CD2A-F191-ADB2A5FEC7D2}</Project>
+      <Name>com.unity.postprocessing.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="com.unity.postprocessing.Runtime.csproj">
+      <Project>{43CE4B77-0ED1-06DF-D6D8-916516C0693A}</Project>
+      <Name>com.unity.postprocessing.Runtime</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Editor\CustomEditorBase.cs" />
     <Compile Include="Assets\Editor\Tester.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Attributes\PostProcessingModelEditorAttribute.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\AmbientOcclusionModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\AntialiasingModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\BloomModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\BuiltinDebugViewsEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\ChromaticAberrationEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\ColorGradingModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\DefaultPostFxModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\DepthOfFieldModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\DitheringModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\EyeAdaptationModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\FogModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\GrainModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\MotionBlurModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\ScreenSpaceReflectionModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\UserLutModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Models\VignetteModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Monitors\HistogramMonitor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Monitors\ParadeMonitor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Monitors\VectorscopeMonitor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Monitors\WaveformMonitor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PostProcessingBehaviourEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PostProcessingFactory.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PostProcessingInspector.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PostProcessingModelEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PostProcessingMonitor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PropertyDrawers\GetSetDrawer.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PropertyDrawers\MinDrawer.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\PropertyDrawers\TrackballGroupDrawer.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Utils\CurveEditor.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Utils\EditorGUIHelper.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Utils\EditorResources.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Utils\FxStyles.cs" />
-    <Compile Include="Assets\PostProcessing\Editor\Utils\ReflectionUtils.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramRender.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\ParadeRender.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeCompute.compute" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\VectorscopeRender.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformCompute.compute" />
-    <None Include="Assets\PostProcessing\Editor Resources\Monitors\WaveformRender.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\UI\CurveBackground.shader" />
-    <None Include="Assets\PostProcessing\Editor Resources\UI\Trackball.shader" />
-    <None Include="Assets\PostProcessing\Resources\Bluenoise64\COPYING.txt" />
-    <None Include="Assets\PostProcessing\Resources\Bluenoise64\LICENSE.txt" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\AmbientOcclusion.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Blit.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Bloom.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\BuiltinDebugViews.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\ColorGrading.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Common.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\DepthOfField.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\DiskKernels.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\EyeAdaptation.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\EyeHistogram.compute" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\FXAA.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\FXAA3.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Fog.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\GrainGen.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\LutGen.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\MotionBlur.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceRaytrace.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\ScreenSpaceReflection.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\TAA.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\TAA.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />
-    <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
-    <None Include="Assets\PostProcessing\Utilities\CustomMotionTexture\Shaders\CustomMotionVectorTexture.shader" />
+    <None Include="Assets\PostProcessing\Editor\com.unity.postprocessing.Editor.asmdef" />
+    <None Include="Assets\PostProcessing\Runtime\com.unity.postprocessing.Runtime.asmdef" />
+    <None Include="Assets\PostProcessing\Shaders\ACES.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\API\D3D11.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\API\D3D12.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\API\D3D9.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\API\Metal.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\API\OpenGL.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\API\PSSL.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\API\Vulkan.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\API\XboxOne.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\AutoExposure.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\Bloom.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\Copy.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\CopyStd.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\DeferredFog.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\DepthOfField.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\DepthOfField.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\DiscardAlpha.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\DiskKernels.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\Dithering.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\ExposureHistogram.compute" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\ExposureHistogram.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\FastApproximateAntialiasing.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\FinalPass.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\Fog.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\GaussianDownsample.compute" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\GrainBaker.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\Lut2DBaker.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\Lut3DBaker.compute" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\MotionBlur.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\MultiScaleVO.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\MultiScaleVODownsample1.compute" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\MultiScaleVODownsample2.compute" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\MultiScaleVORender.compute" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\MultiScaleVOUpsample.compute" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\ScalableAO.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\ScalableAO.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\ScreenSpaceReflections.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\ScreenSpaceReflections.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\SubpixelMorphologicalAntialiasing.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\SubpixelMorphologicalAntialiasing.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\TemporalAntialiasing.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\Texture2DLerp.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\Texture3DLerp.compute" />
+    <None Include="Assets\PostProcessing\Shaders\Builtins\Uber.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Colors.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\Debug\Histogram.compute" />
+    <None Include="Assets\PostProcessing\Shaders\Debug\Histogram.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Debug\LightMeter.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Debug\Overlays.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Debug\Vectorscope.compute" />
+    <None Include="Assets\PostProcessing\Shaders\Debug\Vectorscope.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Debug\Waveform.compute" />
+    <None Include="Assets\PostProcessing\Shaders\Debug\Waveform.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Editor\ConvertToLog.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Editor\CurveGrid.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Editor\Trackball.shader" />
+    <None Include="Assets\PostProcessing\Shaders\Sampling.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\StdLib.hlsl" />
+    <None Include="Assets\PostProcessing\Shaders\xRLib.hlsl" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
