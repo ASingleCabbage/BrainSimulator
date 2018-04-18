@@ -45,3 +45,6 @@ TagManager:
   - name: GameSprites
     uniqueID: 3628029855
     locked: 0
+  - name: AbsoluteTop
+    uniqueID: 2052226201
+    locked: 0
