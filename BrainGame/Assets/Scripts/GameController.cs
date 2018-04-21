@@ -15,15 +15,21 @@ public class GameController : MonoBehaviour {
 
     //variables for workers
     public int maxWorkerCount = 10;
+    public float workerStaminaCostPerUpdate;
     private int activeWorkerCount = 0;
     public string workerCountDisplayString;
 
-    //variables for player health
+    //variables for player health (should be integers)
     public GameObject healthDisplay;
     public UnityEvent deathEvents;
-    private int playerHealth = 100;
-    private const int maxHealth = 100;
+    private int playerHealth;
+    private int maxHealth;
 
+    //variables for stamina (should be floats)
+    public GameObject staminaDisplay;
+    public UnityEvent exhaustedEvents;
+    private float playerStamina;
+    private float maxStamina;
 
 	// Use this for initialization
 	void Start () {
@@ -35,7 +41,16 @@ public class GameController : MonoBehaviour {
             go.transform.GetChild(1).gameObject.GetComponent<Button>().onClick.AddListener(() => AddWorker());
             go.transform.GetChild(2).gameObject.GetComponent<Button>().onClick.AddListener(() => RemoveWorker());
         }
+
+        maxHealth = (int) healthDisplay.GetComponent<Slider>().maxValue;
+        playerHealth = (int) healthDisplay.GetComponent<Slider>().value;
+        maxStamina = staminaDisplay.GetComponent<Slider>().maxValue;
+        playerStamina = staminaDisplay.GetComponent<Slider>().value;
 	}
+
+    void Update() {
+        ReduceStamina(activeWorkerCount * workerStaminaCostPerUpdate);   
+    }
 
     public void AddWorker() {
         if (activeWorkerCount >= maxWorkerCount) {
@@ -95,4 +110,30 @@ public class GameController : MonoBehaviour {
         healthDisplay.GetComponent<Slider>().value = playerHealth;
     }
 
+    /*
+     * Player stamina functions 
+     */
+    public void AddStamina(float staminaIncrease) {
+        playerStamina += staminaIncrease;
+        if (playerStamina > maxStamina) {
+            playerStamina = maxStamina;
+        }
+
+        updateStaminaDisplay();
+    }
+
+    public void ReduceStamina(float staminaDecrease) {
+        playerStamina -= staminaDecrease;
+        if (playerStamina <= 0) {
+            playerStamina = 0;
+
+            Debug.Log("YOU COLLAPSED DUDE");
+            exhaustedEvents.Invoke();
+        }
+        updateStaminaDisplay();
+    }
+
+    void updateStaminaDisplay() {
+        staminaDisplay.GetComponent<Slider>().value = playerStamina;
+    }
 }
