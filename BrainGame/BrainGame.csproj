@@ -292,10 +292,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\InteractPrompt.cs" />
     <Compile Include="Assets\Scripts\CameraEffectsController.cs" />
     <Compile Include="Assets\Scripts\FadeInEnable.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\InfoPanel.cs" />
+    <Compile Include="Assets\Scripts\InteractibleManager.cs" />
     <Compile Include="Assets\Scripts\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\ManualControl.cs" />
     <Compile Include="Assets\Scripts\MapTriggerRight.cs" />
