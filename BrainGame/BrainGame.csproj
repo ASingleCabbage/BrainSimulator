@@ -298,6 +298,7 @@
     <Compile Include="Assets\Scripts\InfoPanel.cs" />
     <Compile Include="Assets\Scripts\InventoryItem.cs" />
     <Compile Include="Assets\Scripts\ManualControl.cs" />
+    <Compile Include="Assets\Scripts\MapTriggerRight.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\ScrollViewManager.cs" />
     <Compile Include="Assets\Scripts\Worker.cs" />
