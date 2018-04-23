@@ -4,7 +4,16 @@ using UnityEngine;
 
 public class MapTriggerRight : MonoBehaviour {
 
-	void OnTriggerEnter(Collider other) {
-		Destroy (other.gameObject);
+	public GameObject currentMap;
+	public GameObject nextMap;
+	public GameObject player;
+
+	void OnTriggerEnter2D(Collider2D other) {
+		
+		player.transform.Translate (-10, 0, 0);
+		nextMap.SetActive (true);
+		currentMap.SetActive (false);
+		Debug.Log("you have traveled right");
+
 	}
 }

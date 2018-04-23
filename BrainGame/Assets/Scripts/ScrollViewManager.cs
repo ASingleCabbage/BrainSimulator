@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class ScrollViewManager : MonoBehaviour {
     public GameObject scrollViewContent;
-
-
-
     public GameObject item;
 
     private List<GameObject> itemList;
@@ -15,7 +12,7 @@ public class ScrollViewManager : MonoBehaviour {
 	void Start () {
         itemList = new List<GameObject>();
 
-        for (int i = 0; i < 20; i++) {
+        for (int i = 0; i < 2; i++) {
             addItemToScrollView();
         }
     }

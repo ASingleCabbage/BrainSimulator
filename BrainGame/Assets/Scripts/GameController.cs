@@ -33,6 +33,7 @@ public class GameController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        UpdateWorkerDisplay();
         brainRegions = GameObject.FindGameObjectsWithTag(searchTag);
         Debug.Log(brainRegions.Length + " gameobjects with tag " + searchTag + " found");
        
