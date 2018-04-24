@@ -65,7 +65,7 @@ public class TutorialScript : MonoBehaviour {
             new TutorialStep("Notice that you only have 8 workers to spare. Make sure you put them to good use. Each region would require 2 to reach normal function."),
             new TutorialStep("Each worker uses up some brain stamina every second. The more workers you have active, the faster you'll loose stamina. Like your health, if you run out of stamina, you collapse and loose"),
             new TutorialStep("You can use items in your inventory to replenish stamina or health. Use the coffee in your inventory to top off your stamina before you start the day", delegate(){
-                if(GameObject.Find("BrainStaminaBar ").GetComponent<Slider>().value >= 90.0f){
+                if (GameObject.Find("BrainStaminaBar").GetComponent<Slider>().value >= 90.0f){
                     return true;
                 }else{
                     return false;

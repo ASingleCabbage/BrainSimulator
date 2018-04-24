@@ -292,6 +292,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\InventoryItem_prefabs\CoffeeScript.cs" />
     <Compile Include="Assets\Scripts\CameraEffectsController.cs" />
     <Compile Include="Assets\Scripts\DialoguePanelController.cs" />
     <Compile Include="Assets\Scripts\FadeInEnable.cs" />
@@ -300,11 +301,11 @@
     <Compile Include="Assets\Scripts\InteractibleManager.cs" />
     <Compile Include="Assets\Scripts\InteractPrompt.cs" />
     <Compile Include="Assets\Scripts\InventoryItem.cs" />
+    <Compile Include="Assets\Scripts\InventoryManager.cs" />
     <Compile Include="Assets\Scripts\ManualControl.cs" />
     <Compile Include="Assets\Scripts\MapTriggerLeft.cs" />
     <Compile Include="Assets\Scripts\MapTriggerRight.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\Scripts\ScrollViewManager.cs" />
     <Compile Include="Assets\Scripts\TutorialScript.cs" />
     <Compile Include="Assets\Scripts\Worker.cs" />
     <Compile Include="Assets\Scripts\WorkerContainer.cs" />

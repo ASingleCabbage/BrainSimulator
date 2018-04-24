@@ -6,6 +6,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
+[ExecuteInEditMode]
 /* Might want to move all button and other UI handling here */
 public class GameController : MonoBehaviour {
     public GameObject workerDisplay;    //text displaying the number of idle workers

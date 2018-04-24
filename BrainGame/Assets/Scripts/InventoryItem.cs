@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class InventoryItem : MonoBehaviour {
     public string itemName;
+    public string itemKey;
+    //public Sprite itemSprite;
 
     private GameObject gameController;
 
