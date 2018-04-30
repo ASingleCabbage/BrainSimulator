@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 		Vector2 movement = new Vector2 (moveHorizontal, 0) * speed * speedMultiplier;
         gameObject.transform.Translate(movement * Time.deltaTime);
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
+		if (Input.GetKeyDown (KeyCode.W)) {
 			GetComponent<Rigidbody2D> ().AddForce (jumpheight, ForceMode2D.Impulse);
 		}
 

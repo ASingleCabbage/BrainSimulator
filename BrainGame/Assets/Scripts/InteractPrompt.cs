@@ -29,7 +29,7 @@ public class InteractPrompt : MonoBehaviour {
         }
 
         timeSinceActive += Time.deltaTime;
-        rt.localScale = rt.localScale +- scaleChangeVector * Mathf.Sin(timeSinceActive * scalingSpeedMultiplier) ;
+        rt.localScale = rt.localScale + scaleChangeVector * Mathf.Sin(timeSinceActive * scalingSpeedMultiplier) ;
     }
 
 }

@@ -30,7 +30,7 @@ public class WorkerContainer : MonoBehaviour {
         workersList = new List<GameObject>();
 
         //Print out the initial messages and functions
-        PrintMessage();
+        //PrintMessage();
         TriggerWorkerCountFunction(0);
     }
     

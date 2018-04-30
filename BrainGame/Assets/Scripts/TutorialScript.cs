@@ -36,11 +36,17 @@ public class TutorialScript : MonoBehaviour {
     }
 
     void setupTutorial() {
+        GameObject.Find("DormRoom").transform.Find("RightMapTrigger").gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+        GameObject.Find("DormRoom").transform.Find("LeftMapTrigger").gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+        GameObject.Find("DormRoom").transform.Find("DeskInteractible").gameObject.GetComponent<BoxCollider2D>().isTrigger = false;
+        Time.timeScale = 0; //pausing game time initially to prevent loosing health
         tutorialSteps = new List<TutorialStep> {
-            new TutorialStep("Welcome to the final day of the semester"),
-            new TutorialStep("Quick! There are no workers in your brain right now"),
-            new TutorialStep("Press B and H to manually control your breathing and heartrate"),
-            new TutorialStep("If you don't do it frequently enough, you'll loose health and die"),
+            new TutorialStep("Welcome to the final day of the semester."),
+            new TutorialStep("Quick! There are no workers in your brain right now.", delegate(){
+                Time.timeScale = 1; //restores game time scale after player clicks next on this prompt
+                return true;
+            }),
+            new TutorialStep("Press B and H to manually control your breathing and heart rate. If you don't do it frequently enough, you'll lose health and die."),
             new TutorialStep("Try allocating 2 workers to the brain stem to let it automate vital functions", delegate(){
                 if(GameObject.Find("BrainStem").GetComponent<WorkerContainer>().GetWorkerCount() == 2){
                     return true;
@@ -48,14 +54,14 @@ public class TutorialScript : MonoBehaviour {
                     return false;
                 }
             }),
-            new TutorialStep("You can't see well because you dont have enough workers in your occipital lobe, try assigning 2 workers there too", delegate(){
+            new TutorialStep("You can't see well because you dont have enough workers in your occipital lobe, try assigning 2 workers there too.", delegate(){
                 if(GameObject.Find("OccipitalLobe").GetComponent<WorkerContainer>().GetWorkerCount() == 2){
                     return true;
                 } else {
                     return false;
                 }
             }),
-            new TutorialStep("Try moving around...Feels sluggish? Assign 2 workers to your motor cortex to move faster", delegate(){
+            new TutorialStep("Try moving around...Feels sluggish? Assign 2 workers to your motor cortex to move faster.", delegate(){
                 if(GameObject.Find("MotorCortex").GetComponent<WorkerContainer>().GetWorkerCount() == 2){
                     return true;
                 }else{
@@ -63,9 +69,12 @@ public class TutorialScript : MonoBehaviour {
                 }
             }),
             new TutorialStep("Notice that you only have 8 workers to spare. Make sure you put them to good use. Each region would require 2 to reach normal function."),
-            new TutorialStep("Each worker uses up some brain stamina every second. The more workers you have active, the faster you'll loose stamina. Like your health, if you run out of stamina, you collapse and loose"),
-            new TutorialStep("You can use items in your inventory to replenish stamina or health. Use the coffee in your inventory to top off your stamina before you start the day", delegate(){
+            new TutorialStep("Each worker uses up some brain stamina every second. The more workers you have active, the faster you'll loose stamina. Like your health, if you run out of stamina, you'll collapse and end the game early."),
+            new TutorialStep("You can use items in your inventory to replenish stamina or health. Use the coffee in your inventory to top off your stamina before you start the day.", delegate(){
                 if (GameObject.Find("BrainStaminaBar").GetComponent<Slider>().value >= 90.0f){
+                    GameObject.Find("DormRoom").transform.Find("RightMapTrigger").gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                    GameObject.Find("DormRoom").transform.Find("LeftMapTrigger").gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                    GameObject.Find("DormRoom").transform.Find("DeskInteractible").gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
                     return true;
                 }else{
                     return false;

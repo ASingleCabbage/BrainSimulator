@@ -24,13 +24,23 @@ public class ManualControl : MonoBehaviour {
     private float maxToleranceTime;
     private Color startingColor;
 
+    private Button linkedButton;
+    private bool buttonPress;
+
     private GameController gameController;  //GameController script reference
+
 	// Use this for initialization
 	void Start () {
         timeSinceLastPress = 0.0f;
         minToleranceTime = secondsFrequency - secondsFrequency * toleranceRange;
         maxToleranceTime = secondsFrequency + secondsFrequency * toleranceRange;
         startingColor = gameObject.GetComponent<Image>().color;
+
+
+        buttonPress = false;
+        linkedButton = gameObject.GetComponent<Button>();
+        linkedButton.interactable = false;
+        linkedButton.onClick.AddListener(delegate { buttonPress = true; });
 
         Debug.Log("Min time: " + minToleranceTime + " Max time: " + maxToleranceTime);
         gameController = GameObject.FindWithTag("GameController").GetComponent<GameController>();
@@ -40,10 +50,13 @@ public class ManualControl : MonoBehaviour {
         timeSinceLastPress = 0.0f;        
     }
 
+
     // Update is called once per frame
     void Update () {
-        if (Input.GetButtonDown(keyName) && timeSinceLastPress > minToleranceTime) {
-            //Debug.Log("Button " + keyName + " is held down. It's been " + timeSinceLastPress + " seconds since last press");
+        if ((Input.GetButtonDown(keyName) || buttonPress == true) && timeSinceLastPress > minToleranceTime) {
+            linkedButton.interactable = false;
+            buttonPress = false;
+
             timeSinceLastPress = 0.0f;
             timeSinceLastDamage = 0.0f;
         } else if (timeSinceLastPress > maxAllowance) {
@@ -64,12 +77,14 @@ public class ManualControl : MonoBehaviour {
         }
     }
 
+    //added some code here to set button as interactible only when active
     void setColor (float time) {
         if (time < minToleranceTime) {
             gameObject.GetComponent<Image>().color = startingColor;
             return;
         }
 
+        linkedButton.interactable = true;
         float percentTime = (time - minToleranceTime) / (maxToleranceTime - minToleranceTime);
         if (percentTime > 1.0f) {
             gameObject.GetComponent<Image>().color = targetColor;

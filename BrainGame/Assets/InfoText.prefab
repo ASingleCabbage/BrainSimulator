@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114317923589838632}
   - component: {fileID: 114587871650764118}
   - component: {fileID: 114306760170527862}
+  - component: {fileID: 225178182014513846}
   m_Layer: 5
   m_Name: InfoText
   m_TagString: Untagged
@@ -114,3 +115,14 @@ RectTransform:
   m_AnchoredPosition: {x: 38.5, y: 79.3}
   m_SizeDelta: {x: 216.96, y: 10}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &225178182014513846
+CanvasGroup:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1798168020578144}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
