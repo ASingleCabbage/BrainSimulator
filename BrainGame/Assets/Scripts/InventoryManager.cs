@@ -91,7 +91,7 @@ public class InventoryManager : MonoBehaviour {
     }
 
     void updateScrollViewItemCount(ActiveInventoryItem activeItem) {
-        activeItem.itemInstance.GetComponent<Text>().text = activeItem.itemObject.GetComponent<InventoryItem>().itemName + "\t X " + activeItem.itemCount;
+        activeItem.itemInstance.GetComponentInChildren<Text>().text = activeItem.itemObject.GetComponent<InventoryItem>().itemName + "\t X " + activeItem.itemCount;
     }
     
     void removeScrollViewItem(ActiveInventoryItem activeItem) {

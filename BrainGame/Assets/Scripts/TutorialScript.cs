@@ -15,12 +15,13 @@ public class TutorialScript : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        tutorialDialogue.GetComponentInChildren<Button>().onClick.AddListener(dialogueDisplayNext);
+        //tutorialDialogue.GetComponentInChildren<Button>().onClick.AddListener(dialogueDisplayNext);
         setupTutorial();
+        tutorialDialogue.SetActive(true);
     }
 
     // Displays the next message if current message condition is met
-    void dialogueDisplayNext() {
+    public void dialogueDisplayNext() {
         if (tutorialSteps[stepIndex].waitCondition()) {
             stepIndex++;
             if (stepIndex >= tutorialSteps.Count) {

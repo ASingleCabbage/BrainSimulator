@@ -13,13 +13,17 @@ public class InteractPrompt : MonoBehaviour {
     private RectTransform rt;
     private Vector3 scaleChangeVector;
 
+    private Vector3 initialScale;
+
     private void Start() {
         rt = gameObject.GetComponent<RectTransform>();
+        initialScale = rt.localScale;
         scaleChangeVector = new Vector3(maxScaleChange, maxScaleChange);
     }
 
     private void OnEnable() {
-        timeSinceActive = 0.0f;    
+        timeSinceActive = 0.0f;
+        rt.localScale = initialScale;
     }
 
     private void Update() {
@@ -30,6 +34,10 @@ public class InteractPrompt : MonoBehaviour {
 
         timeSinceActive += Time.deltaTime;
         rt.localScale = rt.localScale + scaleChangeVector * Mathf.Sin(timeSinceActive * scalingSpeedMultiplier) ;
+    }
+
+    public void TriggerInteract() {
+        interactEvents.Invoke();
     }
 
 }

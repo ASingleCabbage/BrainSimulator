@@ -12,6 +12,7 @@ public class FadeInEnable : MonoBehaviour {
     void Start() {
         gameObject.SetActive(false);
         canvasGroup = gameObject.GetComponent<CanvasGroup>();
+        canvasGroup.alpha = 0;
     }
 
     void Update() {
