@@ -25,12 +25,16 @@ public class GameController : MonoBehaviour {
     public UnityEvent deathEvents;
     private int playerHealth;
     private int maxHealth;
+    public int healthWarnThreshold;
+    private bool healthWarnActive = false;
 
     //variables for stamina (should be floats)
     public GameObject staminaDisplay;
     public UnityEvent exhaustedEvents;
     private float playerStamina;
     private float maxStamina;
+    public float staminaWarnThreshold;
+    private bool staminaWarnActive = false;
 
 	// Use this for initialization
 	void Start () {
@@ -52,7 +56,37 @@ public class GameController : MonoBehaviour {
 	}
 
     void Update() {
-        ReduceStamina(activeWorkerCount * workerStaminaCostPerUpdate);   
+        ReduceStamina(activeWorkerCount * workerStaminaCostPerUpdate);
+        CheckHealthWarn();
+        CheckStaminaWarn();
+    }
+
+    void CheckHealthWarn() {
+        if (healthWarnActive) {
+            if (playerHealth > healthWarnThreshold) {
+                healthWarnActive = false;
+                healthDisplay.GetComponentInChildren<FlashEffect>().Deactivate();
+            }
+        } else {
+            if (playerHealth < healthWarnThreshold) {
+                healthWarnActive = true;
+                healthDisplay.GetComponentInChildren<FlashEffect>().Activate();
+            }
+        }
+    }
+
+    void CheckStaminaWarn() {
+        if (staminaWarnActive) {
+            if (playerStamina > staminaWarnThreshold) {
+                staminaWarnActive = false;
+                staminaDisplay.GetComponentInChildren<FlashEffect>().Deactivate();
+            }
+        } else {
+            if (playerStamina < staminaWarnThreshold) {
+                staminaWarnActive = true;
+                staminaDisplay.GetComponentInChildren<FlashEffect>().Activate();
+            }
+        }
     }
 
     public void AddWorker() {

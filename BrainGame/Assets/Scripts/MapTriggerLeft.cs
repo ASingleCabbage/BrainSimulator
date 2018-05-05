@@ -8,7 +8,7 @@ public class MapTriggerLeft : MonoBehaviour {
 	public GameObject previousMap;
 	public GameObject player;
 
-	void OnTriggerEnter2D(Collider2D other) {
+	void OnTriggerStay2D(Collider2D other) {
 
 		player.transform.Translate (10, 0, 0);
 		previousMap.SetActive (true);

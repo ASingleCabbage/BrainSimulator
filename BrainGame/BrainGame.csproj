@@ -298,6 +298,8 @@
     <Compile Include="Assets\Scripts\CameraEffectsController.cs" />
     <Compile Include="Assets\Scripts\DialoguePanelController.cs" />
     <Compile Include="Assets\Scripts\FadeInEnable.cs" />
+    <Compile Include="Assets\Scripts\FlashEffect.cs" />
+    <Compile Include="Assets\Scripts\FlashEffect_Sprite.cs" />
     <Compile Include="Assets\Scripts\GameController.cs" />
     <Compile Include="Assets\Scripts\InfoPanel.cs" />
     <Compile Include="Assets\Scripts\InteractibleManager.cs" />
@@ -310,6 +312,7 @@
     <Compile Include="Assets\Scripts\Oscillation.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\QuittingGame.cs" />
+    <Compile Include="Assets\Scripts\StrobeEffect.cs" />
     <Compile Include="Assets\Scripts\TutorialScript.cs" />
     <Compile Include="Assets\Scripts\Worker.cs" />
     <Compile Include="Assets\Scripts\WorkerContainer.cs" />
