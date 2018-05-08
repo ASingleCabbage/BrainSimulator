@@ -292,14 +292,16 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\AudioFuckupper.cs" />
     <Compile Include="Assets\InventoryItem_prefabs\CoffeeScript.cs" />
     <Compile Include="Assets\InventoryItem_prefabs\TreeScript.cs" />
     <Compile Include="Assets\InventoryItem_prefabs\WaterScript.cs" />
-    <Compile Include="Assets\Projectile.cs" />
+    <Compile Include="Assets\Scripts\BackgroundMusicManager.cs" />
     <Compile Include="Assets\Scripts\CameraEffectsController.cs" />
     <Compile Include="Assets\Scripts\ConversationTree.cs" />
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\DialoguePanelController.cs" />
+    <Compile Include="Assets\Scripts\DoubleAudioSource.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\DogEnemy.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\FinalExamEnemy.cs" />
     <Compile Include="Assets\Scripts\EnemyScripts\NightSceneEnemy.cs" />
@@ -319,6 +321,7 @@
     <Compile Include="Assets\Scripts\MapTriggerRight.cs" />
     <Compile Include="Assets\Scripts\Oscillation.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\QuittingGame.cs" />
     <Compile Include="Assets\Scripts\StrobeEffect.cs" />
     <Compile Include="Assets\Scripts\TutorialScript.cs" />

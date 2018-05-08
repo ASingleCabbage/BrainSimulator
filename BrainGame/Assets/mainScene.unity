@@ -2245,6 +2245,11 @@ MonoBehaviour:
   currentMap: {fileID: 1883604799}
   previousMap: {fileID: 1050026307}
   player: {fileID: 1550009891}
+  onLoadEvents:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!61 &440544225
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2330,6 +2335,10 @@ GameObject:
   - component: {fileID: 449665615}
   - component: {fileID: 449665616}
   - component: {fileID: 449665617}
+  - component: {fileID: 449665621}
+  - component: {fileID: 449665620}
+  - component: {fileID: 449665619}
+  - component: {fileID: 449665618}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -2402,6 +2411,28 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 932226462}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 449665621}
+        m_MethodName: PlayClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: death
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   healthWarnThreshold: 30
@@ -2451,6 +2482,28 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 932226462}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 449665621}
+        m_MethodName: PlayClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: death
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
@@ -2533,6 +2586,199 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialoguePanel: {fileID: 619970304}
+--- !u!82 &449665618
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449665610}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!82 &449665619
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449665610}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+--- !u!114 &449665620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449665610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57b335dd62eaee141bdabe09371ce4c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &449665621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 449665610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46c687c33ad749b448c1c3732c06a4ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioEntries:
+  - clip: {fileID: 8300000, guid: 34a46c0e4103cfb4a8d4618c2a9c2553, type: 3}
+    key: room
+  - clip: {fileID: 8300000, guid: 4af6b2246b5de0e4f9d4b4d58650f4e4, type: 3}
+    key: lecture
+  - clip: {fileID: 8300000, guid: 210e8392b47ec7044bdbfdb0dc72c2d5, type: 3}
+    key: battle
+  - clip: {fileID: 8300000, guid: 7da64486db68073448b11442aa356b3e, type: 3}
+    key: death
+  fadeTime: 1.4
+  initialMusicKey: room
 --- !u!1 &458388161
 GameObject:
   m_ObjectHideFlags: 0
@@ -5069,6 +5315,22 @@ MonoBehaviour:
   currentMap: {fileID: 615985920}
   nextMap: {fileID: 1989429370}
   player: {fileID: 1550009891}
+  onLoadEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 449665621}
+        m_MethodName: PlayClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: lecture
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &686240163
 GameObject:
   m_ObjectHideFlags: 0
@@ -6213,6 +6475,11 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 932226459}
   m_Script: {fileID: 11500000, guid: c5e0d6086a9cb064f836d58cdd6428eb, type: 3}
+--- !u!1 &932226462 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1972992683728732, guid: 6fb8d53d23aa2674fa2b339fd30a6588,
+    type: 2}
+  m_PrefabInternal: {fileID: 932226459}
 --- !u!1001 &937389254
 Prefab:
   m_ObjectHideFlags: 0
@@ -7693,6 +7960,22 @@ MonoBehaviour:
   currentMap: {fileID: 1989429370}
   previousMap: {fileID: 615985920}
   player: {fileID: 1550009891}
+  onLoadEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 449665621}
+        m_MethodName: PlayClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: room
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1173120061
 GameObject:
   m_ObjectHideFlags: 0
@@ -7996,9 +8279,9 @@ SpriteRenderer:
   m_SortingLayerID: -666937441
   m_SortingLayer: 1
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 0dfcd36902cc7714fb72876ad5afe9e1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 380bb9f5222173840931e85044d0b6eb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.32, y: 0.32}
@@ -8132,6 +8415,11 @@ MonoBehaviour:
   currentMap: {fileID: 1050026307}
   nextMap: {fileID: 1883604799}
   player: {fileID: 1550009891}
+  onLoadEvents:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!61 &1244558290
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8256,6 +8544,11 @@ MonoBehaviour:
   currentMap: {fileID: 850085272}
   previousMap: {fileID: 1883604799}
   player: {fileID: 1550009891}
+  onLoadEvents:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!61 &1262110346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8605,6 +8898,11 @@ MonoBehaviour:
   currentMap: {fileID: 1989429370}
   nextMap: {fileID: 1050026307}
   player: {fileID: 1550009891}
+  onLoadEvents:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!61 &1291944786
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8843,7 +9141,7 @@ GameObject:
   - component: {fileID: 1356998628}
   - component: {fileID: 1356998632}
   m_Layer: 5
-  m_Name: Party Enemy
+  m_Name: DogEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9016,6 +9314,9 @@ GameObject:
   - component: {fileID: 1425162323}
   - component: {fileID: 1425162322}
   - component: {fileID: 1425162324}
+  - component: {fileID: 1425162325}
+  - component: {fileID: 1425162326}
+  - component: {fileID: 1425162327}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -9175,6 +9476,43 @@ MonoBehaviour:
   blendDistance: 0
   weight: 1
   priority: 0
+--- !u!170 &1425162325
+AudioDistortionFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1425162317}
+  m_Enabled: 1
+  m_DistortionLevel: 0.5
+--- !u!168 &1425162326
+AudioEchoFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1425162317}
+  m_Enabled: 1
+  m_Delay: 50
+  m_DecayRatio: 0.5
+  m_WetMix: 1
+  m_DryMix: 1
+--- !u!114 &1425162327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1425162317}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32098318f4156a646b666d901b66b2d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings:
+  - distortion: 0.7
+    echoDelay: 50
+  - distortion: 0.5
+    echoDelay: 30
+  - distortion: 0
+    echoDelay: 0
 --- !u!1 &1445271901
 GameObject:
   m_ObjectHideFlags: 0
@@ -9413,6 +9751,11 @@ MonoBehaviour:
   currentMap: {fileID: 615985920}
   previousMap: {fileID: 459541608}
   player: {fileID: 1550009891}
+  onLoadEvents:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!61 &1482254524
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9531,6 +9874,11 @@ MonoBehaviour:
   currentMap: {fileID: 459541608}
   nextMap: {fileID: 615985920}
   player: {fileID: 1550009891}
+  onLoadEvents:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!61 &1487300920
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10744,6 +11092,22 @@ MonoBehaviour:
   currentMap: {fileID: 1883604799}
   nextMap: {fileID: 850085272}
   player: {fileID: 1550009891}
+  onLoadEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 449665621}
+        m_MethodName: PlayClip
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: battle
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!61 &1803096176
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11899,6 +12263,11 @@ MonoBehaviour:
   currentMap: {fileID: 1050026307}
   previousMap: {fileID: 1989429370}
   player: {fileID: 1550009891}
+  onLoadEvents:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!61 &2023871800
 BoxCollider2D:
   m_ObjectHideFlags: 0

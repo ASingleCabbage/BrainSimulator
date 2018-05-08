@@ -89,14 +89,14 @@ public class TutorialScript : MonoBehaviour {
             }),
             new TutorialStep("You can use items in your inventory to replenish stamina or health. Use the coffee in your inventory to top off your stamina before you start the day.", delegate{
                 if (GameObject.Find("BrainStaminaBar").GetComponent<Slider>().value >= 90.0f){
-                    GameObject.Find("FrontalLobe").GetComponentInChildren<FlashEffect_Sprite>().Activate();
+                    GameObject.Find("TemporalLobe").GetComponentInChildren<FlashEffect_Sprite>().Activate();
                     return true;
                 }else{
                     return false;
                 }
             }),
-            new TutorialStep("If you encounter an unknown obstacle, you can gain Insight by allocating workers to the frontal lobe. One worker lets you know which lobes need workers, and two let you know how much you need.", delegate{
-                GameObject.Find("FrontalLobe").GetComponentInChildren<FlashEffect_Sprite>().Deactivate();
+            new TutorialStep("If you are bothered by the terrible audio quality, you can assign workers to the Temporal Lobe to improve your audio preception.", delegate{
+                GameObject.Find("TemporalLobe").GetComponentInChildren<FlashEffect_Sprite>().Deactivate();
                 GameObject.Find("DormRoom").transform.Find("RightMapTrigger").gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
                 GameObject.Find("DormRoom").transform.Find("LeftMapTrigger").gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
                 GameObject.Find("DormRoom").transform.Find("DeskInteractible").gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
