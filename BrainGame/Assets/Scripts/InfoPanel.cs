@@ -5,7 +5,8 @@ using UnityEngine;
 public class InfoPanel : MonoBehaviour {
     public GameObject infoText;
     [Range(0.0f, 5.0f)]
-    public float defaultDisplayTime = 2.0f;
+    public float defaultDisplayTime = 3.0f;
+    public float fadeOutBegin = 0.0f;
 
     private GameObject currTextObj = null;
     private float timeSinceCreate = 0.0f;
@@ -13,7 +14,7 @@ public class InfoPanel : MonoBehaviour {
     private float overrideDuration = 0.0f;
     private bool overrideActive = false;
 
-    private void Update() {
+    private void FixedUpdate() {
         if (overrideActive) {
             if (trackTime(overrideDuration)) {
                 overrideDuration = 0.0f;
@@ -22,7 +23,6 @@ public class InfoPanel : MonoBehaviour {
         } else {
             trackTime(defaultDisplayTime);
         }
-        
     }
 
     bool trackTime(float targetTime) {
@@ -33,7 +33,9 @@ public class InfoPanel : MonoBehaviour {
                 currTextObj = null;
                 return true;
             } else {
-                currTextObj.GetComponent<CanvasGroup>().alpha = (targetTime - timeSinceCreate) / targetTime; //better way to do this??
+                if (timeSinceCreate > fadeOutBegin) {
+                    currTextObj.GetComponent<CanvasGroup>().alpha = ((targetTime - fadeOutBegin) - (timeSinceCreate - fadeOutBegin)) / (targetTime - fadeOutBegin); //better way to do this?
+                }
                 timeSinceCreate += Time.deltaTime;
             }    
         }
@@ -52,6 +54,10 @@ public class InfoPanel : MonoBehaviour {
         createText(s);
         overrideActive = true;
         overrideDuration = duration;
+    }
+
+    public void overrideCancel() {
+        overrideDuration = 0.0f;
     }
 
     void createText(string s) {

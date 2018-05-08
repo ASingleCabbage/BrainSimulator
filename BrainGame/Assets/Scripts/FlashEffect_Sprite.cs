@@ -26,10 +26,13 @@ public class FlashEffect_Sprite : MonoBehaviour {
         currTime = 0.0f;
     }
 
-    // Update is called once per frame
-    void Update() {
+    //negative flash interval means that its always on
+    void FixedUpdate() {
         if (isActive) {
-            if (currTime > flashInterval) {
+            if (flashInterval < 0) {
+                gameObjectSpriteRenderer.color = targetColor;
+                return;
+            } else if (currTime > flashInterval) {
                 currTime = 0.0f;
                 if (isTargetColor) {
                     isTargetColor = false;

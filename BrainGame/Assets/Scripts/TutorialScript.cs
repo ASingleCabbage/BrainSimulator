@@ -80,19 +80,28 @@ public class TutorialScript : MonoBehaviour {
             }),
             new TutorialStep("Notice that you only have 8 workers to spare. Make sure you put them to good use. Each region would require 2 to reach normal function.", delegate{
                 GameObject.Find("IdleWorkersPanel").GetComponent<FlashEffect>().Deactivate();
+                GameObject.Find("StatusBarBackground").GetComponent<FlashEffect>().Activate();
                 return true;   
             }),
-            new TutorialStep("Each worker uses up some brain stamina every second. The more workers you have active, the faster you'll loose stamina. Like your health, if you run out of stamina, you'll collapse and end the game early."),
+            new TutorialStep("Each worker uses up some brain stamina every second. The more workers you have active, the faster you'll loose stamina. If you run out of stamina, you'll collapse and end the game early.", delegate{
+                GameObject.Find("StatusBarBackground").GetComponent<FlashEffect>().Deactivate();
+                return true;
+            }),
             new TutorialStep("You can use items in your inventory to replenish stamina or health. Use the coffee in your inventory to top off your stamina before you start the day.", delegate{
                 if (GameObject.Find("BrainStaminaBar").GetComponent<Slider>().value >= 90.0f){
-                    GameObject.Find("DormRoom").transform.Find("RightMapTrigger").gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-                    GameObject.Find("DormRoom").transform.Find("LeftMapTrigger").gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
-                    GameObject.Find("DormRoom").transform.Find("DeskInteractible").gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                    GameObject.Find("FrontalLobe").GetComponentInChildren<FlashEffect_Sprite>().Activate();
                     return true;
                 }else{
                     return false;
                 }
-            })
+            }),
+            new TutorialStep("If you encounter an unknown obstacle, you can gain Insight by allocating workers to the frontal lobe. One worker lets you know which lobes need workers, and two let you know how much you need.", delegate{
+                GameObject.Find("FrontalLobe").GetComponentInChildren<FlashEffect_Sprite>().Deactivate();
+                GameObject.Find("DormRoom").transform.Find("RightMapTrigger").gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                GameObject.Find("DormRoom").transform.Find("LeftMapTrigger").gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                GameObject.Find("DormRoom").transform.Find("DeskInteractible").gameObject.GetComponent<BoxCollider2D>().isTrigger = true;
+                return true;
+            }),
         };
 
         tutorialDialogue.GetComponentInChildren<Text>().text = tutorialSteps[0].message;

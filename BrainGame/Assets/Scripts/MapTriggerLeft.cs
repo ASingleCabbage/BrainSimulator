@@ -7,13 +7,19 @@ public class MapTriggerLeft : MonoBehaviour {
 	public GameObject currentMap;
 	public GameObject previousMap;
 	public GameObject player;
+    //public int xTransPostTrigger = 16;
 
 	void OnTriggerStay2D(Collider2D other) {
+        if (other.tag == "Player") {
+            //player.transform.Translate (xTransPostTrigger, 0, 0);
 
-		player.transform.Translate (10, 0, 0);
-		previousMap.SetActive (true);
-		currentMap.SetActive (false);
-		Debug.Log("you have traveled left");
+            //hardcoded translation value because bad programming foresight
+            player.transform.Translate(16, 0, 0);
 
+
+            previousMap.SetActive(true);
+            currentMap.SetActive(false);
+            Debug.Log("you have traveled left, with trigger of " + gameObject.transform.parent.gameObject.name);
+        }
 	}
 }

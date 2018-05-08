@@ -116,6 +116,11 @@ public class GameController : MonoBehaviour {
         }
     }
 
+    public void AddTotalWorker() {
+        maxWorkerCount++;
+        UpdateWorkerDisplay();
+    }
+
     void UpdateWorkerDisplay() {
         workerDisplay.GetComponent<Text>().text = String.Format(workerCountDisplayString, maxWorkerCount - activeWorkerCount, maxWorkerCount);
     }

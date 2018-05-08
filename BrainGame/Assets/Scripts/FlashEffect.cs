@@ -25,11 +25,14 @@ public class FlashEffect : MonoBehaviour {
         isTargetColor = false;
         currTime = 0.0f;
     }
-
-    // Update is called once per frame
-    void Update() {
+    
+    //if flash interval is negative, color is constantly target color
+    void FixedUpdate() {
         if (isActive) {
-            if (currTime > flashInterval) {
+            if (flashInterval < 0) {
+                gameObjectGraphicComponent.color = targetColor;
+                return;
+            } else if (currTime > flashInterval) {
                 currTime = 0.0f;
                 if (isTargetColor) {
                     isTargetColor = false;
