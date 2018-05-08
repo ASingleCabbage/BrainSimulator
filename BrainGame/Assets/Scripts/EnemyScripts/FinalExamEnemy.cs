@@ -63,6 +63,7 @@ public class FinalExamEnemy : MonoBehaviour {
     }
 
     private void Update() {
+
         if (dialogueCompleted) {
             currentAttackCounter += Time.deltaTime;
             Debug.Log("spawn counter " + currentAttackCounter);
@@ -168,7 +169,7 @@ public class FinalExamEnemy : MonoBehaviour {
         int occiWorker = GameObject.Find("OccipitalLobe").GetComponent<WorkerContainer>().GetWorkerCount();
         int fronWorker = GameObject.Find("FrontalLobe").GetComponent<WorkerContainer>().GetWorkerCount();
 
-        if (tempWorker == 1 && occiWorker == 1 && fronWorker == 4) {
+        if (tempWorker <= 1 && occiWorker <= 1 && fronWorker <= 4) {
             return true;
         } else {
             return false;
